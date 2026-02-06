@@ -112,7 +112,14 @@
           }
           .loaded .construction-status { opacity: 1; transform: translateY(0); }
 
-          .char { display: inline-block; opacity: 0; transform: translateY(30px); transition: all 0.6s var(--ease-out); }
+          .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s var(--ease-out);
+            color: #FFFFFF;
+          }
+
           .loaded .char { opacity: 1; transform: translateY(0); }
 
           @media (max-width: 900px) {
