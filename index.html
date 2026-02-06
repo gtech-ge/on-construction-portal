@@ -1,36 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TILE STYLE | Under Construction</title>
-    <style>
-        /* This CSS handles the initial layout before the script kicks in */
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #050505;
-            overflow: hidden;
-        }
-        #app {
-            width: 100%;
-            height: 100vh;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TILE STYLE | Under Construction</title>
+  <style>
+    /* This CSS handles the initial layout before the script kicks in */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #050505;
+      overflow: hidden;
+    }
+
+    #app {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div id="app"></div>
+  <div id="app"></div>
 
-    <script>
-      const initPortal = () => {
-        const app = document.querySelector('#app');
-        if (!app) return;
+  <script>
+    const initPortal = () => {
+      const app = document.querySelector('#app');
+      if (!app) return;
 
-        const style = document.createElement('style');
-        style.textContent = `
+      const style = document.createElement('style');
+      style.textContent = `
           @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Montserrat:wght@400;900&display=swap');
 
           :root {
@@ -133,16 +137,20 @@
             .loaded .v-line { width: 100px; height: 2px; }
           }
         `;
-        document.head.appendChild(style);
+      document.head.appendChild(style);
 
-        const mailIcon = '<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>';
-        const phoneIcon = '<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.81 12.81 0 0 0 .63 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.63A2 2 0 0 1 22 16.92z"></path></svg>';
+      const mailIcon = '<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>';
+      const phoneIcon = '<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.81 12.81 0 0 0 .63 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.63A2 2 0 0 1 22 16.92z"></path></svg>';
+      const locIcon = '<svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>';
 
-        app.innerHTML = `
+      app.innerHTML = `
           <canvas id="dustCanvas"></canvas>
           <div class="main-wrapper">
             <div class="left-side">
-              <div class="tile-icon"><div class="t-bit filled"></div><div class="t-bit"></div><div class="t-bit"></div><div class="t-bit filled"></div></div>
+              <div class="tile-icon">
+                <div class="t-bit filled"></div><div class="t-bit"></div>
+                <div class="t-bit"></div><div class="t-bit filled"></div>
+              </div>
               <h1>
                 <div>${"TILE".split("").map((c, i) => `<span class="char" style="transition-delay: ${0.5 + i * 0.1}s">${c}</span>`).join("")}</div>
                 <div class="red-accent">${"STYLE".split("").map((c, i) => `<span class="char" style="transition-delay: ${0.8 + i * 0.1}s">${c}</span>`).join("")}</div>
@@ -150,53 +158,56 @@
             </div>
             <div class="v-line"></div>
             <div class="right-side">
-              <div class="info-item" style="transition-delay: 1.2s">${phoneIcon}<a href="tel:593101352" class="value">593 10 13 52</a></div>
-              <div class="info-item" style="transition-delay: 1.4s">${mailIcon}<a href="mailto:INFO@TILESTYLE.GE" class="value">INFO@TILESTYLE.GE</a></div>
+
+              <div class="info-item" style="transition-delay: 1.1s">${phoneIcon}<a href="tel:593101352" class="value">593 10 13 52</a></div>
+              <div class="info-item" style="transition-delay: 1.3s">${mailIcon}<a href="mailto:INFO@TILESTYLE.GE" class="value">INFO@TILESTYLE.GE</a></div>
+              <div class="info-item" style="transition-delay: 1.5s">${locIcon}<span class="value">TBILISI, GEORGIA</span></div>
               <div class="construction-status">On Construction</div>
             </div>
           </div>
         `;
 
-        const canvas = document.getElementById('dustCanvas');
-        const ctx = canvas.getContext('2d');
-        let dots = [];
-        const mouse = { x: 0, y: 0 };
+      const canvas = document.getElementById('dustCanvas');
+      const ctx = canvas.getContext('2d');
+      let dots = [];
+      const mouse = { x: 0, y: 0 };
 
-        const resize = () => {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          dots = Array.from({ length: 80 }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            sx: (Math.random() - 0.5) * 0.5,
-            sy: (Math.random() - 0.5) * 0.5
-          }));
-        };
-
-        window.addEventListener('resize', resize);
-        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
-        resize();
-
-        const animate = () => {
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          dots.forEach(dot => {
-            dot.x += dot.sx; dot.y += dot.sy;
-            if (dot.x < 0 || dot.x > canvas.width) dot.sx *= -1;
-            if (dot.y < 0 || dot.y > canvas.height) dot.sy *= -1;
-            const dist = Math.sqrt((mouse.x - dot.x) ** 2 + (mouse.y - dot.y) ** 2);
-            if (dist < 250) {
-              ctx.beginPath();
-              ctx.strokeStyle = `rgba(212, 0, 0, ${1 - dist / 250})`;
-              ctx.moveTo(dot.x, dot.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
-            }
-          });
-          requestAnimationFrame(animate);
-        };
-        animate();
-        setTimeout(() => app.classList.add('loaded'), 100);
+      const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        dots = Array.from({ length: 80 }, () => ({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          sx: (Math.random() - 0.5) * 0.5,
+          sy: (Math.random() - 0.5) * 0.5
+        }));
       };
 
-      initPortal();
-    </script>
+      window.addEventListener('resize', resize);
+      window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+      resize();
+
+      const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        dots.forEach(dot => {
+          dot.x += dot.sx; dot.y += dot.sy;
+          if (dot.x < 0 || dot.x > canvas.width) dot.sx *= -1;
+          if (dot.y < 0 || dot.y > canvas.height) dot.sy *= -1;
+          const dist = Math.sqrt((mouse.x - dot.x) ** 2 + (mouse.y - dot.y) ** 2);
+          if (dist < 250) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(212, 0, 0, ${1 - dist / 250})`;
+            ctx.moveTo(dot.x, dot.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+          }
+        });
+        requestAnimationFrame(animate);
+      };
+      animate();
+      setTimeout(() => app.classList.add('loaded'), 100);
+    };
+
+    initPortal();
+  </script>
 </body>
+
 </html>
